@@ -87,7 +87,7 @@ public class LabRequestController {
 
         User tester =userLoggedInService.getLoggedInUser();
 
-      return   testRequestUpdateService.assignForLabTest(id,tester);
+      return   testRequestUpdateService.assignForLabTest(id,tester); // assigns test request to tester
     }
 
     @PreAuthorize("hasAnyRole('TESTER')")
@@ -97,7 +97,7 @@ public class LabRequestController {
         try {
 
             User tester=userLoggedInService.getLoggedInUser();
-            return testRequestUpdateService.updateLabTest(id,createLabResult,tester);
+            return testRequestUpdateService.updateLabTest(id,createLabResult,tester); // updates the test result
 
 
         } catch (ConstraintViolationException e) {
